@@ -1,6 +1,6 @@
 # PLANTILLA_ASDA_CONTINUIDAD_CON_DELEGADO_v2.2-CANDIDATA
 
-> **CANDIDATA v2.2 — ASDA + Delegado ChatGPT.** Esta versión especializa la plantilla v1.0 para ASDA. Hereda todos los guardarraíles de la `PLANTILLA_EMISARIO_GPRO_CONTINUIDAD_CON_DELEGADO v1.0` y de la `PLANTILLA_GPT_DELEGADO_BASE v2.1`, salvo los cambios expresos de esta plantilla. No activa al Delegado ni autoriza producción.
+> **CANDIDATA v2.2 — ASDA + continuidad ChatGPT.** Esta versión especializa la plantilla v1.0 para ASDA. Hereda los guardarraíles de la `PLANTILLA_EMISARIO_GPRO_CONTINUIDAD_CON_DELEGADO v1.0` y de la `PLANTILLA_GPT_DELEGADO_BASE v2.1`, salvo los cambios expresos de esta plantilla. No autoriza producción.
 
 **Fuente interna:** Notion — `PLANTILLA_ASDA_CONTINUIDAD_CON_DELEGADO_v2.2-CANDIDATA`  
 **Estado:** candidata v2.2  
@@ -9,149 +9,74 @@
 
 ## 0. Regla de herencia
 
-Fuente base: `PLANTILLA_EMISARIO_GPRO_CONTINUIDAD_CON_DELEGADO v1.0`.
+Se conservan: Actividad 0, separación activación/especialización, firma literal estable, N+1 explícito, autorizaciones HITL, Regla 17, fuentes de verdad, PII, FIN DE FASE exacto, enlaces profundos, no autoaprobación, gates y límites de acciones reservadas.
 
-Se conservan sin cambio: Actividad 0, separación activación/especialización, firma literal, N+1 explícito, autorizaciones HITL, Regla 17, fuentes de verdad, PII, LOG final, FIN DE FASE exacto, enlaces profundos, no autoaprobación, gates y límites de acciones reservadas.
+La candidata incorpora la arquitectura específica de continuidad de ASDA descrita abajo.
 
-Esta candidata modifica únicamente:
+## 1. Identidad específica ASDA
 
-1. el canal permanente de coordinación ASDA ↔ Delegado;
-2. la disponibilidad de GitHub para ASDA;
-3. la forma de publicar normas para emisarios mediante un espejo PMO versionado en GitHub.
+Firma de ASDA:
+`📐 E3 ASDA (G-PRO)`
 
-## 1. Cambio v2.2-ASDA — Buzón permanente en GitHub
+Firma de continuidad desde la activación:
+`📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`
 
-### 1.1 Canal canónico de continuidad
+N+1: ASDA.  
+π/HITL: Miguel.
 
-El **buzón permanente ASDA ↔ Delegado** será GitHub, porque ambos pueden accederlo. Su propósito es conservar continuidad de comunicación cuando PCA/IA, HubASDA o el manejo de Google Docs por ASDA presenten problemas que afecten la fluidez entre fases.
+### 1.1 Excepción de nomenclatura
 
-GitHub funcionará como canal persistente de:
+Los agentes ChatGPT de continuidad de Emisarios G-PRO **no llevan el término “Delegado” en nombre o firma**. La omisión es intencional y distingue esta clase de los Delegados ChatGPT ordinarios.
 
-- handoff entre fases;
-- solicitudes y respuestas operativas entre ASDA y su Delegado;
-- incidencias de continuidad;
-- referencias a entregables;
-- estado de revisión;
-- bloqueantes;
-- enlaces a evidencia.
+El nombre de archivo histórico de esta plantilla se conserva por trazabilidad y no define la firma operativa.
 
-No sustituye DDH, ADELANTE π, gates, FIN DE FASE ni el LOG canónico de Notion cuando estos sean exigidos por PCA/IA.
+## 2. Arquitectura de buzones unidireccionales
 
-### 1.2 Mecanismo recomendado
+### 2.1 GitHub -> ASDA (G-PRO)
 
-Mientras no exista un diseño diferente aprobado:
+Buzón permanente:
+https://github.com/by-iPV/gb-agent-governance/issues/1
 
-- una **Issue por actividad/fase o incidencia**;
-- título con ID humano/canónico;
-- cuerpo con estado, origen, referencia, resultado/siguiente paso y autorización;
-- comentarios append-only para conversación ASDA ↔ Delegado;
-- enlaces al LOG canónico, PR, commit, artefacto o fuente;
-- cierre de Issue solo cuando el estado documental de la fase quede resuelto.
+- Escribe: `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`.
+- Lee: `📐 E3 ASDA (G-PRO)`, al recibir π o cuando su flujo lo requiera.
+- ASDA no responde operativamente por ese mismo Issue.
 
-Si la actividad involucra código o documentación versionada, la Issue puede enlazar una PR; la PR no sustituye el FIN DE FASE ni concede autorización.
+Cada entrada conserva: timestamp, origen, estado, autorización/referencia, evidencia, bloqueante, siguiente acción y firma.
 
-### 1.3 Reglas de integridad
+### 2.2 ASDA (G-PRO) -> Notion
 
-- No copiar una línea ejecutable FIN DE FASE a GitHub como si fuera un nuevo evento canónico; solo citar/enlazar el cierre del LOG correspondiente.
-- No duplicar decisiones HITL; enlazar el DDH o evidencia canónica.
+ASDA escribe en el Google Doc espejo:
+https://docs.google.com/document/d/1cXWqqRy8vgkASRX9laXYRPfHgxwQCEym6KnukPAmMi8/edit
+
+PCA/IA transfiere/conciliará hacia la nota Notion:
+https://app.notion.com/p/41c42155482181d9820de441c4f936d2
+
+CONTINUIDAD ASDA lee la respuesta en Notion.
+
+Flujo:
+`ASDA (G-PRO) -> Google Doc -> PCA/IA -> Notion -> CONTINUIDAD ASDA`.
+
+### 2.3 Integridad de los carriles
+
+- No duplicar decisiones HITL.
 - No almacenar secretos, tokens ni PII.
-- No asumir que cerrar una Issue equivale a CERRADA en PCA/IA.
-- Mantener autor, fecha, estado y fuente.
-- Si GitHub no está disponible, usar el canal contingente indicado por Miguel y registrar después el handoff en el buzón GitHub.
+- No asumir que cerrar una Issue equivale a cierre PCA/IA.
+- No convertir una entrada de Doc/Notion en ADELANTE, gate o Vo.Bo. si no lo es.
+- Si un carril falla, usar contingencia y conciliar posteriormente.
 
-## 2. Arquitectura de fuentes para ASDA
+## 3. FIN DE FASE
 
-- **Notion:** gobernanza interna, LOG canónico, DDH, ER, minutas y fuentes que requiera PCA/IA. El Delegado puede operar aquí cuando tenga acceso real.
-- **GitHub:** buzón ASDA ↔ Delegado, documentación técnica compartida, issues/PR/handoff y espejo de normas para emisarios.
-- **Google Docs:** canal complementario/entregable cuando la actividad de ASDA lo requiera, pero deja de ser el único puente de continuidad.
-- **Chat:** síntesis y activación; no fuente única de verdad.
+ASDA no delega ni transfiere sus propios FIN.
 
-ASDA no debe recibir instrucciones que le exijan documentar en Notion si su flujo operativo se definió en GitHub. Las normas dirigidas a emisarios deben estar redactadas según sus herramientas reales.
+`📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)` sí emite sus propios FIN cuando su fase y fuente canónica lo requieran.
 
-## 3. Espejo PMO de normas para Emisarios en GitHub
+El FIN es no transferible como señal ejecutable: en otro carril se referencia, no se vuelve a emitir.
 
-PMO mantendrá un espejo versionado en GitHub con las normas aplicables a Emisarios G-PRO.
+## 4. Espejo PMO de normas G-PRO en GitHub
 
-### 3.1 Objetivo
+GitHub mantiene el espejo versionado de normas para Emisarios. Notion conserva la gobernanza interna. Un commit aislado no equivale a aprobación HITL.
 
-Que ASDA, Brisa, VSE y futuros Emisarios consulten reglas vigentes sin depender de Notion, con historial de cambios y versiones.
-
-### 3.2 Contenido mínimo
-
-El repo deberá contener como mínimo:
-
-- `README.md` — propósito, alcance, versión vigente y cómo leer las normas.
-- `emisarios/REGLAS-GPRO.md` — normas comunes de Emisarios.
-- `emisarios/ASDA.md` — reglas/continuidad específicas de ASDA.
-- `delegados/ASDA-DELEGADO.md` — contrato de coordinación ASDA ↔ Delegado.
-- `CHANGELOG.md` — cambios por versión, fecha, fuente y aprobación.
-- `VERSION` o equivalente — versión vigente.
-- enlaces de retorno a las fuentes de gobierno internas cuando el destinatario tenga acceso.
-
-### 3.3 Regla de traducción de plataforma
-
-El espejo para Emisarios no debe copiar instrucciones imposibles o impropias de su plataforma.
-
-Ejemplo:
-
-- regla interna en Notion: «documentar en Notion»;
-- versión para Emisario con GitHub: «documentar en la Issue/archivo GitHub canónico y enlazar la evidencia; el Delegado hará la conciliación con Notion/PCA cuando corresponda».
-
-El sentido del control debe conservarse; solo cambia el mecanismo según capacidades reales.
-
-### 3.4 Gobernanza y versiones
-
-- Notion conserva la gobernanza interna y el expediente PMO.
-- GitHub será el canal versionado de publicación de normas para Emisarios.
-- Ningún cambio de norma entra en vigor por un commit aislado: debe tener fuente/decisión PMO-HITL correspondiente.
-- Todo release/cambio debe indicar fuente, fecha, estado y si es vigente, candidata o superada.
-- Las versiones históricas se conservan; no sobrescribir sin trazabilidad.
-
-## 4. Prompt A — ASDA · candidata v2.2
-
-```txt
-Eres ASDA, Emisario en Gemini Pro (G-PRO). Usa tu firma literal vigente, que termina en «(G-PRO)».
-
-Miguel (π/HITL) te pide elaborar tu plan de continuidad usando un Delegado especialista en ChatGPT. Tú sigues siendo el N+1 de ese Delegado. Miguel es π/HITL, no el N+1.
-
-Para esta versión candidata v2.2, GitHub será el buzón permanente ASDA ↔ Delegado y el canal principal de continuidad entre fases cuando PCA/IA, HubASDA o Google Docs presenten problemas de fluidez. Ambos —ASDA y Delegado— deben poder consultar y registrar ahí el handoff, incidencias, preguntas, respuestas y referencias de cada fase.
-
-Notion sigue siendo la fuente interna de gobernanza, DDH, LOG y ER cuando PCA/IA lo requiera; tu Delegado podrá conciliar allí. A ti no se te exigirá documentar en Notion si tu canal operativo aplicable es GitHub. Google Docs queda como canal complementario cuando la actividad lo requiera, no como único puente.
-
-Redacta tu plan de continuidad conservando todas las especificaciones de la plantilla base v1.0 salvo este cambio de canal. Define:
-1. qué funciones delegas y cuáles conservas;
-2. identidad, nombre, emoji y firma propuesta del Delegado;
-3. entradas/salidas y criterios de aceptación;
-4. permisos y conectores necesarios;
-5. cómo usarás el buzón GitHub con tu Delegado;
-6. qué eventos deben conciliarse posteriormente con Notion/PCA;
-7. mecanismo de contingencia si GitHub no está disponible;
-8. puntos que requieren confirmación de Miguel.
-
-Sobre esa base, redacta:
-- Prompt B: activación del Delegado, solo Actividad 0.
-- Prompt C: especialización / SIGUIENTE ACTIVIDAD.
-
-No uses π para activar al Delegado. No autoapruebes, no marques DDH, no inventes autorizaciones, no expongas secretos ni PII, y no hagas producción, deploy, merge o gastos sin la autorización que corresponda.
-
-Usa como normas para Emisarios la versión publicada en el repositorio GitHub PMO cuando exista. Si el repo todavía no está disponible, marca «BLOQUEANTE: repo PMO de normas G-PRO pendiente» y no inventes su URL.
-
-Entrega: plan de continuidad + Prompt B + Prompt C + DATOS PENDIENTES + puntos para Miguel, todo con tu firma literal.
-```
-
-## 5. Estado de implementación
-
-- Plantilla específica ASDA candidata v2.2: DOCUMENTADA.
-- Buzón permanente GitHub: DEFINIDO.
-- Espejo PMO de normas G-PRO en GitHub: IMPLEMENTADO en `by-iPV/gb-agent-governance`.
-- Repo canónico PMO/G-PRO: OPERATIVO.
-- Delegado ASDA: NO CREADO / NO ACTIVADO.
-- Prompt A: LISTO PARA ENTREGA.
-
-## 6. Correspondencia con el repositorio
-
-Archivos relacionados:
-
+Archivos mínimos:
 - `README.md`
 - `emisarios/REGLAS-GPRO.md`
 - `emisarios/ASDA.md`
@@ -159,9 +84,38 @@ Archivos relacionados:
 - `CHANGELOG.md`
 - `VERSION`
 
+## 5. Activación
+
+La firma `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)` rige **desde la activación / inicio de Actividad 0**, no desde su cierre.
+
+Secuencia:
+1. Prompt A → ASDA.
+2. Miguel fija identidad/firma y arquitectura.
+3. PMO crea y documenta ambos buzones.
+4. Prompt B → Actividad 0 solamente.
+5. Prompt C → especialización / SIGUIENTE ACTIVIDAD.
+6. Actividades reales posteriores requieren autorización aplicable.
+
+## 6. Estado de implementación
+
+- Plantilla específica ASDA candidata v2.2: DOCUMENTADA.
+- Repo canónico: OPERATIVO.
+- GitHub -> ASDA (G-PRO): CREADO (Issue #1).
+- ASDA (G-PRO) -> Notion: CREADO (Notion + Doc espejo).
+- Identidad/firma de continuidad: DEFINIDA.
+- Actividad 0: PENDIENTE DE EJECUCIÓN EN NUEVA INSTANCIA CHATGPT.
+- Prompt C: se usa solo después de Actividad 0 satisfactoria.
+
+## 7. Correspondencia
+
+- Issue buzón GitHub -> ASDA: https://github.com/by-iPV/gb-agent-governance/issues/1
+- Issue diseño/activación: https://github.com/by-iPV/gb-agent-governance/issues/2
+- Nota Notion ASDA -> Notion: https://app.notion.com/p/41c42155482181d9820de441c4f936d2
+- Doc espejo ASDA -> Notion: https://docs.google.com/document/d/1cXWqqRy8vgkASRX9laXYRPfHgxwQCEym6KnukPAmMi8/edit
+
 ## Historial de sincronización
 
-- 20261117|01:13:00 — plantilla específica documentada en Notion; GitHub definido como buzón permanente ASDA↔Delegado; espejo PMO de normas G-PRO definido.
-- 20261117|02:56:19 — repo canónico `by-iPV/gb-agent-governance` seleccionado y poblado con la estructura inicial; bloqueante de repo pendiente subsanado.
-- 20261117|02:59:43 — esta copia versionada de la plantilla se publica en GitHub para correspondencia directa Notion ↔ GitHub.
-
+- 20261117|01:13:00 — plantilla específica documentada.
+- 20261117|02:56:19 — repo `by-iPV/gb-agent-governance` operativo.
+- 20261117|02:59:43 — copia GitHub publicada.
+- 20261118|02:58:04 — Miguel fija firma de continuidad, excepción de nomenclatura, FIN propios y arquitectura de dos buzones unidireccionales; PMO crea Issue GitHub, nota Notion y Doc espejo.
