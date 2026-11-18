@@ -1,48 +1,56 @@
-# ASDA — Continuidad con Delegado ChatGPT
+# ASDA — Continuidad ChatGPT
 
 **Estado:** candidata v2.2  
 **Versión:** 0.1.0-candidate
 
 ## 1. Relación funcional
 
-ASDA es el N+1 funcional de su futuro Delegado ChatGPT.
+ASDA es el N+1 funcional de la continuidad ChatGPT asociada a su rol.
 
-Miguel permanece como π/HITL y no se confunde con el N+1.
+- Firma ASDA: `📐 E3 ASDA (G-PRO)`
+- Firma de continuidad desde la activación: `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`
+- Miguel permanece como π/HITL y no se confunde con el N+1.
 
-El Delegado no sustituye a ASDA ni hereda automáticamente todas sus atribuciones.
+La continuidad ChatGPT no sustituye a ASDA ni hereda automáticamente todas sus atribuciones.
 
-## 2. Buzón permanente
+## 2. Excepción de nomenclatura
 
-El buzón permanente ASDA ↔ Delegado será GitHub.
+Por decisión de Miguel, los agentes ChatGPT que operan como continuidad de Emisarios G-PRO **no llevan el término “Delegado” en su nombre o firma**.
 
-Objetivos:
-- continuidad entre fases;
-- handoff;
-- preguntas y respuestas;
-- bloqueantes;
-- incidencias;
-- referencias a evidencia;
-- continuidad cuando PCA/IA, HubASDA o Google Docs afecten la fluidez.
+La ausencia de ese término es una distinción funcional frente a los Delegados ChatGPT ordinarios.
 
-## 3. Convención inicial de uso
+## 3. Arquitectura de buzones
 
-Hasta que exista otra regla aprobada:
+La comunicación ASDA ↔ continuidad se divide en dos carriles unidireccionales.
 
-- una **Issue por actividad/fase o incidencia**;
-- título con ID y nombre humano;
-- cuerpo con:
-  - origen;
-  - estado;
-  - referencia canónica;
-  - autorización;
-  - resultado o avance;
-  - siguiente acción;
-- comentarios append-only para la conversación;
-- enlace a PR, commit, artefacto o LOG cuando corresponda.
+### 3.1 GitHub -> ASDA (G-PRO)
 
-## 4. Lo que GitHub no sustituye
+Buzón permanente:
+https://github.com/by-iPV/gb-agent-governance/issues/1
 
-El buzón GitHub no sustituye:
+- Escribe `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`.
+- ASDA lee al recibir π o cuando el flujo operativo lo requiera.
+- ASDA no responde por esta Issue.
+- Cada entrada conserva timestamp, referencia, estado, evidencia, bloqueante y siguiente acción.
+
+### 3.2 ASDA (G-PRO) -> Notion
+
+ASDA responde en un Google Doc espejo de una nota Notion.
+
+Nota:
+https://app.notion.com/p/41c42155482181d9820de441c4f936d2
+
+Doc espejo:
+https://docs.google.com/document/d/1cXWqqRy8vgkASRX9laXYRPfHgxwQCEym6KnukPAmMi8/edit
+
+Flujo:
+`ASDA (G-PRO) -> Google Doc -> PCA/IA -> Notion -> CONTINUIDAD ASDA`.
+
+ASDA escribe con su firma literal `📐 E3 ASDA (G-PRO)`. La continuidad lee la respuesta ya conciliada en Notion.
+
+## 4. Lo que los buzones no sustituyen
+
+Los buzones no sustituyen:
 - DDH;
 - ADELANTE π;
 - gates;
@@ -51,46 +59,28 @@ El buzón GitHub no sustituye:
 
 ## 5. FIN DE FASE
 
-ASDA y su Delegado no deben copiar un FIN DE FASE como una nueva señal operativa dentro de una Issue o archivo GitHub.
+- ASDA no delega ni transfiere sus propios FIN.
+- `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)` sí emite sus propios FIN cuando su fase y fuente canónica lo requieran.
+- Un FIN pertenece a su fuente canónica y no se replica como señal ejecutable en otro carril.
 
-En GitHub se registra únicamente:
-- referencia al cierre;
-- actor;
-- timestamp;
-- fuente;
-- resultado;
-- siguiente paso.
+## 6. Secuencia de activación
 
-## 6. Qué debe definir ASDA antes de activar al Delegado
+1. Prompt A → ASDA: plan de continuidad y definición de Prompts B/C.
+2. Miguel fija identidad y firma de continuidad.
+3. PMO crea ambos buzones y documenta su uso.
+4. Prompt B → `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`: solo Actividad 0 y verificación de acceso.
+5. Prompt C → especialización / SIGUIENTE ACTIVIDAD.
+6. Las actividades reales posteriores requieren sus autorizaciones correspondientes.
 
-ASDA debe preparar su plan de continuidad y definir:
+## 7. Regla de plataforma
 
-1. funciones que delega;
-2. funciones que conserva;
-3. nombre, emoji y firma propuesta del Delegado;
-4. entradas y salidas admitidas;
-5. permisos y conectores;
-6. criterios de aceptación;
-7. qué eventos deben conciliarse con Notion/PCA;
-8. contingencia si GitHub no está disponible;
-9. puntos que requieran confirmación de Miguel.
+ASDA no debe ser obligado a escribir directamente en Notion. Su carril de salida es el Google Doc espejo.
 
-## 7. Secuencia de activación
+La continuidad ChatGPT concilia/lee Notion cuando corresponda y tenga permiso válido.
 
-1. **Prompt A → ASDA:** ASDA define su plan y produce los Prompts B y C.
-2. **Prompt B → Delegado:** solo Actividad 0 y verificación de acceso/registro.
-3. **Prompt C → Delegado:** especialización / SIGUIENTE ACTIVIDAD.
-4. Las actividades reales posteriores requieren sus autorizaciones correspondientes.
+## 8. Estado actual
 
-## 8. Regla de plataforma
-
-ASDA no debe recibir instrucciones que le exijan documentar directamente en Notion si el canal operativo definido para esa actividad es GitHub.
-
-El Delegado será quien concilie con Notion/PCA cuando corresponda y tenga permiso válido.
-
-## 9. Estado actual
-
-- Delegado ASDA: no activado todavía.
-- Nombre/firma final: pendiente de definición de ASDA y conciliación.
-- Buzón GitHub: definido.
-- Repo de normas: este repositorio.
+- Identidad/firma: DEFINIDA por Miguel.
+- Buzón GitHub -> ASDA: CREADO.
+- Buzón ASDA -> Notion: CREADO con Doc espejo.
+- Actividad 0: PENDIENTE DE EJECUCIÓN en una instancia nueva de ChatGPT.
