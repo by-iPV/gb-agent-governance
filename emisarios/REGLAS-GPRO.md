@@ -15,10 +15,12 @@ Estas reglas trasladan a GitHub los controles aplicables a Emisarios G-PRO sin e
 
 ## 2. Fuente y canal operativo
 
-- GitHub es el canal versionado para normas G-PRO y, cuando se defina, para continuidad con Delegados.
-- Notion puede seguir siendo fuente interna de gobernanza y PCA/IA, pero no se exige al Emisario documentar allí si no forma parte de su flujo.
-- El Delegado ChatGPT puede conciliar la información entre GitHub y Notion cuando tenga acceso y encargo válido.
-- Google Docs puede usarse como canal complementario cuando corresponda.
+- GitHub es canal versionado de normas G-PRO y puede ser fuente del lado ChatGPT/PCA-IA.
+- Un Emisario G-PRO no debe ser instruido para leer GitHub o Notion directamente cuando su entorno no ofrezca esa capacidad autónoma.
+- Google Drive/Docs es la interfaz operativa de lectura/escritura para el Emisario cuando así esté definido.
+- PCA/IA/puente puede trasladar o conciliar información desde GitHub/Notion hacia un LOG/Buzón de Drive.
+- La continuidad/delegado ChatGPT puede leer directamente Drive cuando tenga acceso real, sin esperar necesariamente la sincronización hacia Notion.
+- Notion conserva gobernanza y trazabilidad interna cuando corresponda.
 
 ## 3. Evidencia y trazabilidad
 
@@ -76,8 +78,39 @@ Si existe duda, detener y escalar.
 
 ## 8. Continuidad
 
-Si PCA/IA, HubASDA o Docs presentan problemas:
-- utilizar el canal GitHub definido para continuidad;
-- registrar el handoff;
+Si existen carriles entre plataformas:
+- registrar el handoff en la fuente que el actor sí pueda usar;
+- no asumir que el Emisario puede leer GitHub o Notion;
+- usar PCA/IA/puente para materializar en Drive lo que el Emisario deba leer;
 - evitar duplicar autorizaciones;
 - conciliar posteriormente con la fuente interna que corresponda.
+
+## 9. Comando π v2.2 — lectura de LOG/Buzón de continuidad
+
+La operación π v2.2 incrementa el protocolo previo: no elimina el listado habitual de Docs/LOGs de Drive.
+
+Cuando un Emisario reciba π:
+1. revisa sus Docs/LOGs habituales de Drive;
+2. revisa además los LOG/Buzones de sus continuidades/delegados que estén disponibles en Drive;
+3. procesa novedades, feedback, bloqueantes, handoffs y solicitudes de autorización dirigidas al Emisario;
+4. responde en el Doc/carril de Drive definido para ese actor;
+5. no intenta leer GitHub o Notion directamente si su plataforma no lo permite;
+6. no transforma por inferencia una entrada en ADELANTE, Vo.Bo., gate o FIN.
+
+La lista exacta de Docs/LOGs que consulta cada Emisario sigue siendo específica de su rol/configuración.
+
+## 10. Cabecera operativa de Docs espejo — I-148
+
+La candidata v2.2 habilita como estándar documental la cabecera operativa mínima para nuevos Docs espejo/buzones o cuando se actualice su diseño:
+- PIR ID;
+- tipo de buzón;
+- actor;
+- N+1;
+- dirección/carril;
+- modo de lectura;
+- Fases Autónomas;
+- estado FA/progreso;
+- estado del proyecto;
+- X días sin actividad cuando aplique.
+
+Mientras PCA/IA no automatice estas propiedades, pueden mantenerse manualmente por el actor autorizado.
