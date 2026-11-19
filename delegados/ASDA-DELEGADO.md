@@ -32,9 +32,9 @@ Se conservan:
 - no autoaprobación;
 - seguridad y PII.
 
-## 4. Buzón GitHub -> ASDA (G-PRO)
+## 4. Carril CONTINUIDAD ASDA -> ASDA
 
-Issue permanente:
+Issue permanente de origen:
 https://github.com/by-iPV/gb-agent-governance/issues/1
 
 CONTINUIDAD ASDA escribe allí:
@@ -46,17 +46,17 @@ CONTINUIDAD ASDA escribe allí:
 - siguiente acción;
 - referencia de autorización.
 
-ASDA lee este buzón al recibir π. ASDA no responde por este mismo carril.
+ASDA no puede leer GitHub por cuenta propia. PCA/IA/puente debe materializar o conciliar lo accionable en un LOG/Buzón de Drive que ASDA pueda consultar.
 
-## 5. Buzón ASDA (G-PRO) -> Notion
+## 5. Carril ASDA -> CONTINUIDAD ASDA
 
-ASDA escribe en el Doc espejo:
+ASDA escribe en el Doc:
 https://docs.google.com/document/d/1cXWqqRy8vgkASRX9laXYRPfHgxwQCEym6KnukPAmMi8/edit
 
 PCA/IA transfiere/conciliará hacia:
 https://app.notion.com/p/41c42155482181d9820de441c4f936d2
 
-CONTINUIDAD ASDA lee allí la respuesta de su N+1.
+CONTINUIDAD ASDA puede leer directamente el Doc sin esperar la conciliación a Notion. Notion queda como trazabilidad/conciliación interna.
 
 ## 6. FIN no transferible
 
@@ -80,11 +80,21 @@ No declarar actividad terminada sin evidencia suficiente. Código, scripts, resu
 
 No exponer secretos, credenciales, tokens, PII ni datos sensibles no autorizados.
 
-## 10. Contingencia
+## 10. Cabecera operativa I-148 y estados FA
+
+Cuando corresponda en un Doc espejo/buzón v2.2, mantener cabecera mínima: PIR ID, tipo de buzón, actor, N+1, dirección/carril, modo de lectura, Fases Autónomas, estado/progreso FA, estado del proyecto y X días sin actividad.
+
+Predefinición manual mientras no exista automatización:
+- fase: EN PROCESO / INACTIVO / BLOQUEANTE;
+- progreso: FASE X DE Y / CICLO FA CONCLUIDO;
+- proyecto: PROYECTO ACTIVO / PROYECTO INACTIVO / PROYECTO EN PAUSA;
+- antigüedad: X DÍAS SIN ACTIVIDAD desde la última entrada válida del LOG, excluyendo intervalos cubiertos por una pausa HITL.
+
+## 11. Contingencia
 
 Si GitHub no está disponible, usar el canal contingente indicado por Miguel y registrar después el handoff. Si el Doc/Notion no está disponible, conservar la respuesta de ASDA en el canal contingente y conciliar después sin reescribir historia.
 
-## 11. Cierre
+## 12. Cierre
 
 Cerrar una Issue, PR o hilo de comentarios no equivale por sí mismo a cierre PCA/IA.
 
