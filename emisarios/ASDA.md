@@ -21,32 +21,45 @@ La ausencia de ese término es una distinción funcional frente a los Delegados 
 
 ## 3. Arquitectura de buzones
 
-La comunicación ASDA ↔ continuidad se divide en dos carriles unidireccionales.
+La continuidad usa carriles separados y respeta las capacidades reales de cada plataforma.
 
-### 3.1 GitHub -> ASDA (G-PRO)
+### 3.1 CONTINUIDAD ASDA -> GitHub -> PCA/IA/puente -> Drive -> ASDA
 
-Buzón permanente:
+Buzón GitHub de origen:
 https://github.com/by-iPV/gb-agent-governance/issues/1
 
 - Escribe `📐 D1 🧩 CONTINUIDAD ASDA (G-PRO)/(ChatGPT)`.
-- ASDA lee al recibir π o cuando el flujo operativo lo requiera.
-- ASDA no responde por esta Issue.
-- Cada entrada conserva timestamp, referencia, estado, evidencia, bloqueante y siguiente acción.
+- ASDA **no puede leer GitHub por cuenta propia**.
+- PCA/IA/puente debe trasladar o conciliar las novedades accionables al LOG/Buzón de Drive que ASDA pueda leer.
+- ASDA no responde en GitHub.
 
-### 3.2 ASDA (G-PRO) -> Notion
+### 3.2 ASDA -> Drive -> PCA/IA -> Notion -> CONTINUIDAD ASDA
 
-ASDA responde en un Google Doc espejo de una nota Notion.
-
-Nota:
-https://app.notion.com/p/41c42155482181d9820de441c4f936d2
-
-Doc espejo:
+Doc donde ASDA escribe:
 https://docs.google.com/document/d/1cXWqqRy8vgkASRX9laXYRPfHgxwQCEym6KnukPAmMi8/edit
 
-Flujo:
-`ASDA (G-PRO) -> Google Doc -> PCA/IA -> Notion -> CONTINUIDAD ASDA`.
+Nota Notion de conciliación:
+https://app.notion.com/p/41c42155482181d9820de441c4f936d2
 
-ASDA escribe con su firma literal `📐 E3 ASDA (G-PRO)`. La continuidad lee la respuesta ya conciliada en Notion.
+Flujo formal:
+`ASDA -> Google Doc -> PCA/IA -> Notion -> CONTINUIDAD ASDA`.
+
+Atajo permitido:
+`ASDA -> Google Doc -> CONTINUIDAD ASDA`.
+
+CONTINUIDAD ASDA puede leer directamente el Doc para no esperar la sincronización a Notion. Notion conserva trazabilidad y conciliación interna.
+
+### 3.3 Comando π para ASDA
+
+La versión v2.2 **incrementa**, no sustituye, el comportamiento previo de π sobre los Docs/LOGs de Drive.
+
+Al recibir π, ASDA:
+1. revisa el listado habitual de Docs/LOGs de Drive de su operación;
+2. revisa además los LOG/Buzones de sus continuidades/delegados que PCA/IA haya materializado o conciliado en Drive;
+3. identifica novedades, bloqueantes, feedback o solicitudes de autorización;
+4. responde únicamente en el Doc/carril de Drive que corresponda;
+5. no intenta leer GitHub ni Notion directamente;
+6. no interpreta una entrada de buzón como ADELANTE, Vo.Bo., gate o FIN si no lo es.
 
 ## 4. Lo que los buzones no sustituyen
 
@@ -74,13 +87,19 @@ Los buzones no sustituyen:
 
 ## 7. Regla de plataforma
 
-ASDA no debe ser obligado a escribir directamente en Notion. Su carril de salida es el Google Doc espejo.
+ASDA no debe ser obligado a leer o escribir directamente en Notion ni a leer GitHub por cuenta propia. Su interfaz operativa es Google Drive/Docs.
 
-La continuidad ChatGPT concilia/lee Notion cuando corresponda y tenga permiso válido.
+La continuidad ChatGPT puede leer GitHub, Notion y Drive cuando tenga acceso real y encargo válido.
 
-## 8. Estado actual
+## 8. Cabecera operativa I-148
+
+Los Docs espejo/buzones de la candidata v2.2 deben poder mostrar, cuando corresponda, una cabecera mínima con: PIR ID, tipo de buzón, actor, N+1, dirección/carril, modo de lectura, estado de Fases Autónomas, estado de proyecto y X días sin actividad. La automatización de esta cabecera queda pendiente; mientras tanto puede aplicarse manualmente.
+
+## 9. Estado actual
 
 - Identidad/firma: DEFINIDA por Miguel.
-- Buzón GitHub -> ASDA: CREADO.
-- Buzón ASDA -> Notion: CREADO con Doc espejo.
-- Actividad 0: PENDIENTE DE EJECUCIÓN en una instancia nueva de ChatGPT.
+- Issue GitHub de CONTINUIDAD ASDA: CREADA.
+- Doc de respuesta ASDA: CREADO.
+- Actividad 0 de CONTINUIDAD ASDA: CONCLUIDA.
+- Prompt C: ACTUALIZADO.
+- Puente automático GitHub -> Drive para ASDA: PENDIENTE DE IMPLEMENTACIÓN.
