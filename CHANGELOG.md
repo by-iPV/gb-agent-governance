@@ -37,3 +37,17 @@ Decisión directa de Miguel:
 ### Status
 
 Candidata v2.2. No constituye autorización de producción.
+
+## Updated — 2026-11-19
+
+Decisión directa de Miguel:
+
+- Se corrige la capacidad real de ASDA/G-PRO: ASDA no puede leer GitHub por cuenta propia ni Notion.
+- Flujo hacia ASDA: `CONTINUIDAD ASDA -> GitHub -> PCA/IA/puente -> Doc de Drive -> ASDA`.
+- Flujo de retorno: `ASDA -> Doc de Drive -> PCA/IA -> Notion -> CONTINUIDAD ASDA`.
+- CONTINUIDAD ASDA puede leer directamente el Doc de Drive sin esperar la conciliación a Notion.
+- Prompt C actualizado después de Actividad 0 concluida.
+- π v2.2 para Emisarios conserva los LOGs habituales de Drive y añade lectura de LOG/Buzón de su continuidad/delegado cuando esté materializado en Drive.
+- I-148 queda habilitada en la candidata v2.2 como cabecera operativa de Docs espejo/buzones.
+- Se incorpora predefinición candidata de estados FA: EN PROCESO, INACTIVO, BLOQUEANTE, FASE X DE Y, CICLO FA CONCLUIDO, PROYECTO ACTIVO, PROYECTO INACTIVO, PROYECTO EN PAUSA y X DÍAS SIN ACTIVIDAD.
+
